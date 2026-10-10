@@ -1,0 +1,52 @@
+INPUT_PARAMETERS
+suffix  ABACUS
+calculation     scf
+ecutwfc 100
+scf_thr_type    2
+scf_thr 1e-05
+scf_ene_thr     1e-05
+scf_nmax        100
+
+
+smearing_method gaussian
+smearing_sigma  0.01
+
+mixing_type     broyden
+mixing_beta     0.2
+mixing_ndim     30
+
+scf_os_stop   1
+scf_os_thr -0.01   # when the slope of drho oscillation is large than it, SCF will stop
+scf_os_ndim   20   # control how many steps will be used to calculate the slope
+
+ks_solver       dav_subspace
+basis_type      pw
+pw_diag_ndim    2
+pw_diag_nmax    20
+pw_seed 0
+
+kpar    4         # 对K点并行，在DCU/GPU中，会自动调整kpar为卡的数量。此值不能大于并行的核数
+kspacing        0.14  # 单位为1/bohr
+
+symmetry        -1
+noncolin        1
+nspin   4
+lspinorb        1
+
+onsite_radius   3.0   # 基本可以用。严谨来说需要对每种材料测试不同的onsite_radius大小，取原子磁矩最大值对应的参数值
+sc_mag_switch   1   #是否进行deltaspin的计算，限制磁矩
+sc_thr  1e-07        # 磁矩收敛的阈值
+nsc     3            # 内循环的步数
+nsc_min 2             # 内循环最小步数
+alpha_trial     0.01
+sccut   3.0
+sc_scf_thr      10
+sc_os_ndim    5   # control how many steps when drho oscillation will do twice DS inner loop
+
+cal_stress      1
+cal_force       1
+
+device		gpu
+gga_grad	2
+
+out_chg     1
