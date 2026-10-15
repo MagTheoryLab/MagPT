@@ -61,7 +61,8 @@ pip install ase
 
 MagPT runs on a DeePMD-kit branch with some spin-related modifications:
 
-- 🔗 **[MagTheoryLab/deepmd-kit — `spin_virial_master_port`](https://github.com/MagTheoryLab/deepmd-kit/tree/spin_virial_master_port)**
+- 🔗 Official repository: **[deepmodeling/deepmd-kit](https://github.com/deepmodeling/deepmd-kit)** — the original DeePMD-kit developed by the DeepModeling community, on which this work is based
+- 🔗 MagPT branch: **[MagTheoryLab/deepmd-kit — `spin_virial_master_port`](https://github.com/MagTheoryLab/deepmd-kit/tree/spin_virial_master_port)** — based on the official DeePMD-kit with spin-related modifications originally contributed by **[Duo Zhang](https://github.com/iProzd/deepmd-kit)**, and maintained by our team
 - Compile this branch following the official DeePMD-kit instructions: **[Install from source code](https://docs.deepmodeling.com/projects/deepmd/en/latest/install/install-from-source.html)**
 
 ### Evaluate the Model
