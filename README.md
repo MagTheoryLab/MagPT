@@ -44,13 +44,13 @@ for atoms in read("./examples/example.xyz", index=":"):
 
 The released model is stored at `model/MagPT_399168.pth`. It is retrained **only on the released 399,168 frames**, not on the full 912,492-entry dataset.
 
-Evaluation on the released 399,168 frames:
+The figure below shows the parity plots for four physical quantities predicted by the model on the released 399,168 frames:
 
 <p align="center">
   <img src="./figs/parity_399168.png" width="90%" alt="Parity plots for energy, force, spin, and magnetic force on the released 399,168 frames">
 </p>
 
-The figure shows the parity plots for four physical quantities predicted by the model:
+Root-mean-square errors (RMSE) on the released 399,168 frames:
 
 | Quantity | Unit | RMSE |
 | --- | --- | ---: |
