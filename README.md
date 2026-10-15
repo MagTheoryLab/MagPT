@@ -18,7 +18,6 @@
   - [Repository Contents](#repository-contents)
   - [Citation](#citation)
   - [License](#license)
-  - [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -44,6 +43,21 @@ for atoms in read("./examples/example.xyz", index=":"):
 ## Model
 
 The released model is stored at `model/MagPT_399168.pth`. It is retrained **only on the released 399,168 frames**, not on the full 912,492-entry dataset.
+
+Evaluation on the released 399,168 frames:
+
+<p align="center">
+  <img src="./figs/parity_399168.png" width="90%" alt="Parity plots for energy, force, spin, and magnetic force on the released 399,168 frames">
+</p>
+
+The figure shows the parity plots for four physical quantities predicted by the model:
+
+| Quantity | Unit | RMSE |
+| --- | --- | ---: |
+| Energy | meV/atom | 8.87 |
+| Force | meV/$\mathrm{\AA}$ | 97.5 |
+| Magnetic force | meV/$\mu_{\mathrm{B}}$ | 31.3 |
+| Virial | meV/atom | 73.4 |
 
 ## Usage
 
@@ -88,6 +102,7 @@ The model file `MagPT_399168.pth` is included in this repository.
 - `model/MagPT_399168.pth` — Base model trained on the released 399,168 entries
 - `abacus/` — ABACUS pseudopotentials, orbitals, and INPUT files
 - `examples/` — XYZ example and evaluation scripts
+- `figs/` — Parity plots for model evaluation
 - `LICENSE` — LGPL-3.0
 - `README.md`
 
@@ -107,6 +122,3 @@ The model file `MagPT_399168.pth` is included in this repository.
 
 **GNU Lesser General Public License v3.0 (LGPL-3.0)**
 
-## Acknowledgements
-
-We acknowledge the support from **National Natural Science Foundation of China (No. 52325204)** and **Science Challenge Project (No. TZ2025017)**. We thank **MetaX** for providing access to a large-scale GPU cluster and **National Supercomputing Center in Chengdu** for DCU nodes support. We thank the **DeepModeling community** and the **ABACUS development team** for technical support and valuable discussions.
